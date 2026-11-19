@@ -1,5 +1,23 @@
 # Day 11 — Controlled Agent Security (2026)
 
+## Thông tin học viên & Cách chạy nhanh
+
+- **Họ và tên:** Bùi Gia Huy
+- **MSSV:** `2A202603525`
+- **Lớp:** `K5-L3A`
+- **Model đã dùng:**
+  - **Blue (CP2–CP3):** Liquid AI `lfm3-1.7b` (`https://api.liquid.ai/openai/v1`, cấu hình qua `LIQUID_API_KEY` / `LIQUID_BASE_URL` / `LIQUID_MODEL` trong `.env`, tương thích ngược OpenRouter)
+  - **Red + Red Advance (CP4):** OpenAI `gpt-4o-mini` (`RED_TEAM_PROVIDER=openai`) + NVIDIA NeMo Guardrails `0.24.1`
+- **Lệnh chạy nhanh (từ gốc repo, sau khi kích hoạt `.venv`):**
+  ```powershell
+  python src/main.py --part 2
+  python src/main.py --part 3
+  python src/main.py --part 4
+  pytest tests/smoke -q
+  pytest tests/public -q
+  python scripts/grade.py --submission-dir . --out outputs/grade_report.json
+  ```
+
 > 👤 **Hình thức:** bài tập **cá nhân** (1 người / 1 MSSV).  
 > 🎯 **Mục tiêu:** đóng vai **Blue Team** để học cách xây Guardrails phòng thủ, rồi đóng vai **Red Team** để tấn công agent **Red** hoặc **Red Advance**.  
 > ✅ Làm theo **Checkpoint 1 → 5** trong [`CHECKPOINTS.md`](CHECKPOINTS.md) · nộp theo [`SUBMISSION.md`](SUBMISSION.md).
